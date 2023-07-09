@@ -1,0 +1,12 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: news-app-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.120.8.78:8848
+      config:
+        server-addr: 47.120.8.78:8848
+        file-extension: yml

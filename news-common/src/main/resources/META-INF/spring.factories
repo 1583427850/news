@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  xyz.linyh.common.exception.ExceptionCatch,\
+  xyz.linyh.common.swagger.config.SwaggerConfiguration,\
+  xyz.linyh.common.exception.knife4j.config.Knife4jConfig

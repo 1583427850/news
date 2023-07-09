@@ -1,0 +1,14 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: news-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.120.8.78:8848
+      #        可以通过这个地址去nacos找到对应DATA ID的配置
+      config:
+        server-addr: 47.120.8.78:8848
+        file-extension: yml
+
