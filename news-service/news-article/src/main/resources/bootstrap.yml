@@ -10,4 +10,14 @@ spring:
       config:
         server-addr: 47.120.8.78:8848
         file-extension: yml
-
+minio:
+  access-key: minio
+  secret-key: adminabc
+  bucket: news
+  endpoint: http://47.120.8.78:9000
+  read-path: http://47.120.8.78:9000
+  freemarker:
+    cache: false    #是否开启模板缓存
+    settings:
+      template_update_delay: 0 #检查更新的延迟，和缓存有关
+    suffix: .ftl  #freemarker模板文件的后缀

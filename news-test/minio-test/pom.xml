@@ -28,6 +28,12 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+<!--            自己封装的minio操作-->
+            <groupId>xyz.linyh</groupId>
+            <artifactId>file-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 <!--        minio需要的依赖-->
         <dependency>

@@ -34,6 +34,7 @@ public class MinIOFileStorageService implements FileStorageService {
     private final static String separator = "/";
 
     /**
+     *
      * @param dirPath
      * @param filename yyyy/mm/dd/file.jpg
      * @return

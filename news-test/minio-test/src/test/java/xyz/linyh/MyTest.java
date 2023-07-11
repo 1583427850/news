@@ -5,7 +5,9 @@ import io.minio.ObjectWriteResponse;
 import io.minio.PutObjectArgs;
 import io.minio.errors.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import xyz.linyh.file.service.FileStorageService;
 import xyz.linyh.minio.test.MinIOTestApplication;
 
 import java.io.File;
@@ -17,6 +19,9 @@ import java.security.NoSuchAlgorithmException;
 
 @SpringBootTest(classes = MinIOTestApplication.class)
 public class MyTest {
+
+    @Autowired
+    private FileStorageService fileStorageService;
     @Test
     public void test() {
         try {
@@ -38,5 +43,13 @@ public class MyTest {
                  InternalException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test2() throws FileNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream("C:/Users/lin/Desktop/index.css");
+
+        String s = fileStorageService.uploadHtmlFile("/plugins/css", "index.css", fileInputStream);
+        System.out.println(s);
     }
 }
