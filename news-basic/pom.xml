@@ -9,22 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>news-test</artifactId>
+    <artifactId>news-basic</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>freemarker-test</module>
-        <module>minio-test</module>
+        <module>file-starter</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>xyz.linyh</groupId>-->
-<!--            <artifactId>news-common</artifactId>-->
-<!--        </dependency>-->
-    </dependencies>
 
 </project>

@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>news-user</module>
+        <module>news-article</module>
     </modules>
 
     <properties>

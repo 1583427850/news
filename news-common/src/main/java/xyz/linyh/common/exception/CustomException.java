@@ -1,5 +1,6 @@
 package xyz.linyh.common.exception;
 
+
 import xyz.linyh.model.common.enums.AppHttpCodeEnum;
 
 //自定义异常

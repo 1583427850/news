@@ -1,0 +1,13 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: news-article
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.120.8.78:8848
+      config:
+        server-addr: 47.120.8.78:8848
+        file-extension: yml
+

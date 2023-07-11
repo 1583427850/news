@@ -1,0 +1,10 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: freemarker-test
+  freemarker:
+    cache: false    #是否开启模板缓存
+    settings:
+      template_update_delay: 0 #检查更新的延迟，和缓存有关
+    suffix: .ftl  #freemarker模板文件的后缀
