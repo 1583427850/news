@@ -13,6 +13,18 @@
     <name>news-utils</name>
 
     <dependencies>
+
+        <!--        用来序列化对象-->
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.8.0</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>xyz.linyh</groupId>-->
 <!--            <artifactId>news-model</artifactId>-->

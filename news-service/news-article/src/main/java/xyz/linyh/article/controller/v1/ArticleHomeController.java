@@ -41,7 +41,8 @@ public class ArticleHomeController {
      */
     @PostMapping("/load")
     public ResponseResult load(@RequestBody ArticleHomeDto dto){
-        return apArticleService.load(dto, ApArticleConstants.LOAD_MORE_TYPE);
+//        return apArticleService.load(dto, ApArticleConstants.LOAD_MORE_TYPE);
+        return apArticleService.load2(dto,ApArticleConstants.LOAD_MORE_TYPE,true);
     }
 
     /**
@@ -62,12 +63,13 @@ public class ArticleHomeController {
         return apArticleService.load(dto,ApArticleConstants.LOAD_NEWS_TYPE);
     }
 
-    @GetMapping
+    /**
+     * 生成文章内容静态为文件
+     * @throws IOException
+     * @throws TemplateException
+     */
+    @GetMapping("context_test")
     public void test1() throws IOException, TemplateException {
-
-        /**
-         * 将文章内容查询出来,结合文章内容模板,生成对应的文件,将文件保存到minio中,然后将保存的地址保存到aparticle数据库中
-         */
 
 //        查询数据库获取文章内容数据
             ApArticleContent articleContent = apArticleContentService.getOne(Wrappers.<ApArticleContent>lambdaQuery().eq(ApArticleContent::getArticleId, 1302862387124125698L));
@@ -79,9 +81,8 @@ public class ArticleHomeController {
             configuration.getTemplate("article.ftl").process(map,writer);
             ByteArrayInputStream inputStream = new ByteArrayInputStream(writer.toString().getBytes());
             String path = fileStorageService.uploadHtmlFile("", articleContent.getArticleId() + ".html", inputStream);
-            apArticleService.update(Wrappers.<ApArticle>lambdaUpdate().eq(ApArticle::getId,articleContent).set(ApArticle::getStaticUrl,path));
+            apArticleService.update(Wrappers.<ApArticle>lambdaUpdate().eq(ApArticle::getId,articleContent.getArticleId()).set(ApArticle::getStaticUrl,path));
             System.out.println(path);
-
         }
 
 }

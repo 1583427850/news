@@ -19,6 +19,13 @@
 
 
     <dependencies>
+
+<!--        任务调度需要的依赖-->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>2.3.1</version>
+        </dependency>
 <!--        引入封装好minio对文件的操作-->
         <dependency>
             <groupId>xyz.linyh</groupId>

@@ -1,0 +1,25 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: news-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.245.205:8848
+      config:
+        server-addr: 192.168.245.205:8848
+        file-extension: yml
+  data:
+    mongodb:
+      #      uri: mongodb://root:Abc8909389@dds-bp128e05840087a41279-pub.mongodb.rds.aliyuncs.com:3717,dds-bp128e05840087a42152-pub.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-70069883
+      username: root
+      password: Abc8909389
+      port: 3717
+      host: dds-bp128e05840087a41279-pub.mongodb.rds.aliyuncs.com
+      database: admin
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+#elasticsearch:
+#  host: 101.37.167.58
+#  port: 9200

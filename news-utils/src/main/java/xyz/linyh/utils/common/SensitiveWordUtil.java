@@ -27,8 +27,10 @@ public class SensitiveWordUtil {
 
         while (iterator.hasNext()) {
             String word = iterator.next();
+//            在一个敏感词中，curmap一直是指向这个敏感词的里面那个map
             curMap = map;
             int len = word.length();
+//            循环结束后，就生成了一个铭感词的map
             for (int i =0; i < len; i++) {
                 // 遍历每个词的字
                 String key = String.valueOf(word.charAt(i));

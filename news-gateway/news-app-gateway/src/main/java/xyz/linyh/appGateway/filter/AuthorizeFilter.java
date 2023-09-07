@@ -39,9 +39,10 @@ public class AuthorizeFilter implements Ordered, GlobalFilter {
 //            结束退出过滤器，直接返回
             return response.setComplete();
         }
+        Claims claimsBody = null;
 //        3.判断token是否有效，如果无效会抛出异常
         try {
-            Claims claimsBody = AppJwtUtil.getClaimsBody(token);
+            claimsBody = AppJwtUtil.getClaimsBody(token);
             int i = AppJwtUtil.verifyToken(claimsBody);
             if(i==1 || i==2){
                 response.setStatusCode(HttpStatus.UNAUTHORIZED);
@@ -53,6 +54,14 @@ public class AuthorizeFilter implements Ordered, GlobalFilter {
 //            结束退出过滤器，直接返回
             return response.setComplete();
         }
+
+        //        获取用户id
+        Object userId = claimsBody.get("id");
+//        将用户id保存到请求头中
+        ServerHttpRequest newRequest = request.mutate().header("userId", userId.toString()).build();
+//        将exchange里面的request修改为改完的
+        exchange.mutate().request(newRequest);
+
 //        验证成功，执行下一个filter
         return chain.filter(exchange);
     }

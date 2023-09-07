@@ -6,6 +6,9 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -19,6 +22,7 @@ public class ApArticle implements Serializable {
      * 
      */
     @TableId(type = IdType.AUTO)
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     /**
@@ -78,12 +82,12 @@ public class ApArticle implements Serializable {
     /**
      * 点赞数量
      */
-    private Object likes;
+    private Integer likes;
 
     /**
      * 收藏数量
      */
-    private Object collection;
+    private Integer collection;
 
     /**
      * 评论数量
@@ -93,7 +97,7 @@ public class ApArticle implements Serializable {
     /**
      * 阅读数量
      */
-    private Object views;
+    private Integer views;
 
     /**
      * 省市

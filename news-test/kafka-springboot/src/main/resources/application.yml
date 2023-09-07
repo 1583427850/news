@@ -1,0 +1,22 @@
+server:
+  port: 9991
+spring:
+  application:
+    name: kafka-springboot
+  kafka:
+#    kafka地址
+    bootstrap-servers: 101.37.167.58:9092
+    producer:
+#      重试次数
+      retries: 10
+#      key和value序列化器
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      消息发送压缩算法
+      compression-type: lz4
+    consumer:
+#      消费者组id
+      group-id: test-group1
+#      key和value反序列器
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

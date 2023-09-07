@@ -1,4 +1,8 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   xyz.linyh.common.exception.ExceptionCatch,\
   xyz.linyh.common.swagger.config.SwaggerConfiguration,\
-  xyz.linyh.common.exception.knife4j.config.Knife4jConfig
+  xyz.linyh.common.exception.knife4j.config.Knife4jConfig,\
+  xyz.linyh.common.autoaudit.ImageAudit,\
+  xyz.linyh.common.autoaudit.TextAudit,\
+  xyz.linyh.common.ORC.Tess4jClient,\
+  xyz.linyh.common.jackson.InitJacksonConfig

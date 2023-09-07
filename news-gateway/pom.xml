@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>news-app-gateway</module>
+        <module>news-webmedia-gateway</module>
+        <module>news-admin-web-gateway</module>
     </modules>
 
     <properties>

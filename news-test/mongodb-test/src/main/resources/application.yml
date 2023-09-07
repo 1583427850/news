@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+#      uri: mongodb://root:Abc8909389@dds-bp128e05840087a41279-pub.mongodb.rds.aliyuncs.com:3717,dds-bp128e05840087a42152-pub.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-70069883
+      username: root
+      password: Abc8909389
+      port: 3717
+      host: dds-bp128e05840087a41279-pub.mongodb.rds.aliyuncs.com
+      database: admin

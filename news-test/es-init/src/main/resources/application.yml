@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: es-init
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/news_article?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    username: root
+    password: abc8909389
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: xyz.linyh.model.article.entity
+
+elasticsearch:
+  host: 101.37.167.58
+  port: 9200

@@ -14,6 +14,11 @@
     <modules>
         <module>freemarker-test</module>
         <module>minio-test</module>
+        <module>kafka-test</module>
+        <module>kafka-springboot</module>
+        <module>es-init</module>
+        <module>mongodb-test</module>
+        <module>xxl_job-test</module>
     </modules>
 
     <properties>

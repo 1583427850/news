@@ -1,0 +1,26 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: news-webmedia
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.245.205:8848
+      config:
+        server-addr: 192.168.245.205:8848
+        file-extension: yml
+
+##配置到nacos中 todo
+#minio:
+#  access-key: minio
+#  secret-key: adminabc
+#  bucket: news
+#  endpoint: http://47.120.8.78:9000
+#  read-path: http://47.120.8.78:9000
+#
+#tess4j:
+##  指定包在哪
+#  data-path: F:\ORC\tess4jResource\chinese_package
+##  指定用什么语言（中文这个）这个需要在上面的目录下
+#  language: chi_sim

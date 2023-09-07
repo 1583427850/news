@@ -25,31 +25,32 @@ public class MyTest {
     @Test
     public void test() {
         try {
-            FileInputStream fileInputStream = new FileInputStream("D:\\freemarker\\list.html");
-            MinioClient build = MinioClient.builder().credentials("minio", "minioabc").endpoint("http://47.120.8.78:9001").build();
-            PutObjectArgs news = PutObjectArgs.builder()
-                    .object("list.html")
-                    .contentType("text/html")
+            FileInputStream fileInputStream = new FileInputStream("D:/plugins/js/index.js");
+
+            MinioClient minioClient = MinioClient.builder()
+                    .credentials("minio", "adminabc")
+                    .endpoint("http://47.120.8.78:9000")
+                    .build();
+
+            PutObjectArgs putObjectArgs = PutObjectArgs.builder()
                     .bucket("news")
+                    .object("plugins/js/index.js")
+                    .contentType("application/javascript")
                     .stream(fileInputStream, fileInputStream.available(), -1)
                     .build();
-            ObjectWriteResponse objectWriteResponse = build.putObject(news);
-            System.out.println(objectWriteResponse);
-            System.out.println("http://47.120.8.78:9000/news/list.html");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException | ServerException | InsufficientDataException | ErrorResponseException |
-                 NoSuchAlgorithmException | InvalidKeyException | InvalidResponseException | XmlParserException |
-                 InternalException e) {
+
+            ObjectWriteResponse response = minioClient.putObject(putObjectArgs);
+            System.out.println("Object uploaded. Response: " + response);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Test
     public void test2() throws FileNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("C:/Users/lin/Desktop/index.css");
+        FileInputStream fileInputStream = new FileInputStream("C:/Users/lin/Desktop/axios.min.js");
 
-        String s = fileStorageService.uploadHtmlFile("/plugins/css", "index.css", fileInputStream);
+        String s = fileStorageService.uploadHtmlFile("/plugins/js", "axios.min.js", fileInputStream);
         System.out.println(s);
     }
 }

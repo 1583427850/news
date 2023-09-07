@@ -6,9 +6,16 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 47.120.8.78:8848
+        server-addr: 192.168.245.205:8848
       #        可以通过这个地址去nacos找到对应DATA ID的配置
       config:
-        server-addr: 47.120.8.78:8848
+        server-addr: 192.168.245.205:8848
         file-extension: yml
+
+#  添加到nacos中
+  redis:
+    host: myredis12345.redis.rds.aliyuncs.com
+    password: Abc8909389
+    port: 6379
+    username: redis
 

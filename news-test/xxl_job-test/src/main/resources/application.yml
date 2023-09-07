@@ -1,0 +1,10 @@
+server:
+  port: ${port}
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.245.205:9001/xxl-job-admin
+    executor:
+      appname: xxl-job-executor-sample
+      port: ${executorPort}
+    accessToken: default_token

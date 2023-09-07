@@ -42,5 +42,6 @@
 <#--            </tr>-->
 <#--        </#list>-->
 <#--    </table>-->
+    {{ publishTime }}
 </body>
 </html>

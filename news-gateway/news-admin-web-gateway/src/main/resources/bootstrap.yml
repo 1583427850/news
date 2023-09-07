@@ -1,0 +1,12 @@
+server:
+  port: 9529
+spring:
+  application:
+    name: news-admin-web-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.245.205:8848
+      config:
+        server-addr: 192.168.245.205:8848
+        file-extension: yml

@@ -17,7 +17,7 @@ public class ApArticleContent implements Serializable {
     /**
      * 主键
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ID_WORKER)
     private Long id;
 
     /**

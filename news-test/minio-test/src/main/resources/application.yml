@@ -1,6 +1,6 @@
 minio:
-  access-key: minioadmin
-  secret-key: minioadmin
+  access-key: minio
+  secret-key: adminabc
   bucket: news
   endpoint: http://47.120.8.78:9000
   read-path: http://47.120.8.78:9000
